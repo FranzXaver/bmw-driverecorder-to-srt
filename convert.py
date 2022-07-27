@@ -19,6 +19,8 @@ with open('Metadata.json',encoding=("us-ascii")) as jsonFile:
     data = json.load(jsonFile)
     with open(MYSRTNAME,'w',encoding=("us-ascii")) as subFile:
         for entry in data[0]['entries']:
+            # convert from km/h to mph
+            mph = entry["velocity"] * 0.6214
             frame = entry['id']
             timeFrom = datetime.fromtimestamp((frame-1)*FRAMETIME+82800)\
                 .strftime('%H:%M:%S,%f')[:-3]
@@ -27,6 +29,6 @@ with open('Metadata.json',encoding=("us-ascii")) as jsonFile:
             subFile.write(f'{frame}\n')
             subFile.write(f'{timeFrom} --> {timeTo}\n')
             subFile.write(f'{entry["date"]} {entry["time"]}\n')
-            subFile.write(f'{entry["velocity"]}km/h, '\
+            subFile.write(f'{entry["velocity"]}km/h ({round(mph,2)}/mph), '\
                           f'lat={entry["latitude"]}, '\
                           f'long={entry["longitude"]}\n\n')
