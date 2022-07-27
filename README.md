@@ -1,4 +1,4 @@
-# bmwdriverecorder
+# BMW Drive Recorder Metadata.json to srt
 Convert BMW Drive Recorder metadata to subtitles
 
 Initial version by Freezedevil:
