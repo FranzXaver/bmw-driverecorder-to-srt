@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" convert bmw driverecorder metadata to substitles """
+""" convert bmw driverecorder metadata to subtitles """
 
 import json
 import os
